@@ -29,7 +29,8 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           targetPlatform: ${{ matrix.targetPlatform }}
-          buildMethod: BuildScript.Build
+          #buildMethod: BuildScript.Build
+          customParameters: -executeMethod TestCustomMethod.TestMethod
       - uses: actions/upload-artifact@v2
         with:
           name: Build-${{ matrix.targetPlatform }}
