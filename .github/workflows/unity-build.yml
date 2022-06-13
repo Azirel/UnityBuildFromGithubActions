@@ -16,11 +16,14 @@ jobs:
         with:
           fetch-depth: 0
           lfs: true
-      - uses: actions/cache@v3
-        with:
-          path: Library
-          key: Library-${{ matrix.targetPlatform }}
-          restore-keys: Library-
+      - name: umpconf
+        run: |
+          ln -sf ./Docs/.upmconfig.toml ~/.upmconfig.toml && cat ~/.upmconfig.toml
+      #- uses: actions/cache@v3
+        #with:
+          #path: Library
+          #key: Library-${{ matrix.targetPlatform }}
+          #restore-keys: Library-
       - uses: game-ci/unity-builder@v2
         env:          
           UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
