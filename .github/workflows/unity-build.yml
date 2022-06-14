@@ -25,6 +25,8 @@ jobs:
           #key: Library-${{ matrix.targetPlatform }}
           #restore-keys: Library-
       - uses: game-ci/unity-builder@v2
+        run: |
+          uname -a && pwd && ls && cd ~ && pwd
         env:          
           UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
