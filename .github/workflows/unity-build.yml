@@ -18,7 +18,7 @@ jobs:
           lfs: true
       - name: umpconf
         run: |
-          ln -sf ./Docs/.upmconfig.toml ~/.upmconfig.toml && cat ~/.upmconfig.toml
+          uname -a && pwd && ls && cd ~ && pwd
       #- uses: actions/cache@v3
         #with:
           #path: Library
