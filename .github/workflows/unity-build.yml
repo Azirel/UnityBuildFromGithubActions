@@ -32,7 +32,7 @@ jobs:
         with:
           targetPlatform: ${{ matrix.targetPlatform }}
           buildMethod: UnityBuilderAction.BuildScript.Build
-          preBuildSteps: uname -a && pwd && ls && cd ~ && pwd
+          preBuildSteps: "uname -a && pwd && ls && cd ~ && pwd"
       - uses: actions/upload-artifact@v2
         with:
           name: Build-${{ matrix.targetPlatform }}
